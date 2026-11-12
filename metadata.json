@@ -1,0 +1,6 @@
+{
+  "name": "Pizarra Digital",
+  "description": "Pizarra digital minimalista de lienzo infinito para lluvia de ideas, wireframing y diagramación.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
