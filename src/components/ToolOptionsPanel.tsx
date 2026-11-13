@@ -98,6 +98,12 @@ export const ToolOptionsPanel: React.FC<ToolOptionsPanelProps> = ({
   isMuted = false,
   onToggleMute,
 }) => {
+  const [thicknessInput, setThicknessInput] = React.useState<string>(String(strokeWidth));
+
+  React.useEffect(() => {
+    setThicknessInput(String(strokeWidth));
+  }, [strokeWidth]);
+
   // Determine effective element type:
   // - If elements are selected: use the selected element's type
   // - If no elements are selected: use active creation tool
@@ -128,12 +134,6 @@ export const ToolOptionsPanel: React.FC<ToolOptionsPanelProps> = ({
   const isVideo = effectiveType === 'video';
   const isAudio = effectiveType === 'audio';
   const isMedia = isVideo || isAudio;
-
-  const [thicknessInput, setThicknessInput] = React.useState<string>(String(strokeWidth));
-
-  React.useEffect(() => {
-    setThicknessInput(String(strokeWidth));
-  }, [strokeWidth]);
 
   // Square Color Button that opens the color window in the top-right corner
   const renderColorButton = () => (
